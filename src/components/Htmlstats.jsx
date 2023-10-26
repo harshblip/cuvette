@@ -46,12 +46,12 @@ export default function Htmlstats() {
     const [score, setScore] = useState(0);
     const [myArray, setMyArray] = useState(new Array(3).fill(0));
     const submitHandle = () => {
-    
+
         const newArray = [...myArray];
         newArray[0] = rank;
         newArray[1] = percentile;
         newArray[2] = score;
-    
+
         setMyArray(newArray);
         setModalShow(false);
     }
@@ -78,7 +78,7 @@ export default function Htmlstats() {
                 <Modal show={modalShow} handleClose={() => closeHandle()} handleSubmit={() => submitHandle()} rank={rank} percentile={percentile} score={score} setRank={setRank} setPercentile={setPercentile} setScore={setScore} />
             </div>
             <div>
-                   <QuickStats rank={myArray[0]} percentile={myArray[1]} score={myArray[2]} />
+                <QuickStats rank={myArray[0]} percentile={myArray[1]} score={myArray[2]} />
             </div>
             <div className='foot'>
                 <div className='e'>
@@ -93,8 +93,8 @@ export default function Htmlstats() {
                 <div style={{ width: 500, height: 200, marginTop: `3rem`, marginLeft: '17rem' }}>
                     <div className='header'>
 
-                    <p>Question Analysis</p>
-                    <p className='ques'> {myArray[2]} / 14  </p>
+                        <p>Question Analysis</p>
+                        <p className='ques'> {myArray[2]} / 14  </p>
                     </div>
                     <p><span className='d2'>You scored {myArray[2]} question correct out of 15.</span> However it<br />
                         still needs some improvements</p>

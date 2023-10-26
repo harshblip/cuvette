@@ -68,7 +68,6 @@ export default function Charts({ percentile }) {
                 data={config.data}
                 options={options}
             >
-
             </Line>
         </div>
     )
