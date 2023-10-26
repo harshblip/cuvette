@@ -24,11 +24,11 @@ export default function Charts({ percentile }) {
         data: {
             labels: ['0', '20', '40', '60', '80', '100'],
             datasets: [{
-                label: 'Your Percentile!',
+                label: 'Your Percentile ',
                 data: [25, ` ${percentile}`, 40, 61, 56, 55, 40],
                 fill: false,
                 borderColor: 'rgb(75, 192, 192)',
-                tension: 0.1
+                tension: 0.1,
             }]
         },
     };
@@ -41,8 +41,8 @@ export default function Charts({ percentile }) {
                 mode: 'vertical',
                 scaleID: 'x',
                 value: 80, // Set the x-value where you want the line
-                borderColor: 'red', // Line color
-                borderWidth: 1, // Line width
+                borderColor: 'red', 
+                borderWidth: 1, 
                 label: {
                   enabled: true,
                   content: 'x = 80', // Optional label
