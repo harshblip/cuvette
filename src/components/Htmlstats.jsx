@@ -9,6 +9,19 @@ import stat from '../images/stat.png';
 import target from '../images/target.png';
 
 const Modal = ({ show, handleClose, handleSubmit, rank, score, percentile, setRank, setScore, setPercentile }) => {
+    const [error, setError] = useState('');
+    const handleChange = (e) => {
+        const value = e.target.value;
+        setScore(value);
+        let errorMessage = 'The value should not\n be above 15';
+        errorMessage = errorMessage.replace(/\n/g, '<br />');
+
+        if (value > 15) {
+            setError(<span dangerouslySetInnerHTML={{ __html: errorMessage }} />);
+        } else {
+            setError('');
+        }
+    };
     return (
         show ?
             <div className="modal">
@@ -29,7 +42,11 @@ const Modal = ({ show, handleClose, handleSubmit, rank, score, percentile, setRa
                         </div>
                         <div className='fields'>
                             <p className='d'> 2 Update your <span className='d2'>current score (out of 15)</span> </p>
-                            <input type="text" class="input-field" value={score} onChange={(e) => setScore(e.target.value)} />
+                            <div className='p'>
+
+                                <input type="text" class="input-field" value={score} onChange={handleChange} />  {error && <p className='error'>{error}</p>}
+
+                            </div>
                         </div>
                     </div>
                     <button onClick={handleSubmit} className='save'>Save</button>
