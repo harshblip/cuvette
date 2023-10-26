@@ -104,14 +104,14 @@ export default function Htmlstats() {
                         <img src={stat} width={20} height={20} alt="staticons" className='graph' />
                     </div>
                     <p><span className='d2'>You scored {myArray[1]}% percentile</span> which is lower than the <br />
-                        average percentile 72% of all the engineers who took this assessment</p>
+                        average percentile {100-myArray[1]}% of all the engineers who took this assessment</p>
                     <Charts percentile={myArray[1]} />
                 </div>
                 <div style={{ width: 500, height: 200, marginTop: `3rem`, marginLeft: '17rem' }}>
                     <div className='header'>
 
                         <p>Question Analysis</p>
-                        <p className='ques'> {myArray[2]} / 14  </p>
+                        <p className='ques'> {myArray[2]} / 15  </p>
                     </div>
                     <p><span className='d2'>You scored {myArray[2]} question correct out of 15.</span> However it<br />
                         still needs some improvements</p>
